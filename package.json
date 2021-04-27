@@ -1,0 +1,8 @@
+{
+  "name": "GetGround",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/NauanyC/GetGround.git",
+  "author": "Nau Nau <nauanycc@outlook.com.br>",
+  "license": "MIT"
+}
