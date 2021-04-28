@@ -8,3 +8,15 @@ export interface Book {
   book_publication_city: string;
   book_pages: number;
 }
+
+export interface BookResponse {
+  books: Book[];
+  count: number;
+}
+
+export interface StateProps {
+  books: Book[];
+  booksCount: number;
+  error: string;
+  loading: boolean;
+}

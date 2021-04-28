@@ -1,0 +1,3 @@
+export const GET_BOOKS_SUCCESS = "GET_BOOKS_SUCCESS";
+export const BOOKS_ERROR = "BOOKS_ERROR";
+export const LOADING_BOOKS = "LOADING_BOOKS";
