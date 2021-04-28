@@ -2,12 +2,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {
-  CircularProgress,
-  Container,
-  Grid,
-  Typography,
-} from "@material-ui/core";
+import { CircularProgress, Container, Typography } from "@material-ui/core";
 import { withStyles, WithStyles } from "@material-ui/core/styles";
 import { StateProps } from "../../interfaces/Book";
 import { getBooks } from "../../store/actions/booksActions";
@@ -56,20 +51,7 @@ class ListBooks extends Component<ListBooksProps> {
 
     return (
       <div className="ListBooks">
-        <Container maxWidth="lg">
-          <Grid
-            container
-            spacing={0}
-            direction="column"
-            alignItems="center"
-            justify="center"
-            style={{ minHeight: "100vh" }}
-          >
-            <Grid item xs={12}>
-              {renderBooks()}
-            </Grid>
-          </Grid>
-        </Container>
+        <Container maxWidth="lg">{renderBooks()}</Container>
       </div>
     );
   }
