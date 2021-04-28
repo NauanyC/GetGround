@@ -11,7 +11,8 @@
         "lint": "eslint --ext .ts --ext .tsx ."
     },
     "dependencies": {
-        "axios": "^0.21.1",
+        "@material-ui/core": "4.11.4",
+        "axios": "0.21.1",
         "react": "17.0.2",
         "react-dom": "17.0.2",
         "typescript": "4.2.4"
