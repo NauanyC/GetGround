@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import ListBooks from "../pages/ListBooks";
+import ListBooks from "../pages/ListBooks/ListBooks";
 
 const Routes: React.FC = () => {
   return (
