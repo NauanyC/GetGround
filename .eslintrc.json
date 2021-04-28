@@ -21,6 +21,8 @@
     "@typescript-eslint/quotes": ["error", "double"],
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
+    "react/no-unescaped-entities": 0,
+    "@typescript-eslint/react/no-unescaped-entities": 0,
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": 1,
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
