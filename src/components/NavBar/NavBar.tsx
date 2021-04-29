@@ -7,6 +7,10 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 
+interface NavBarProps {
+  title: string;
+}
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -21,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const NavBar: React.FC = () => {
+const NavBar: React.SFC<NavBarProps> = ({ title }: NavBarProps) => {
   const classes = useStyles();
 
   return (
@@ -37,7 +41,7 @@ const NavBar: React.FC = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Get Ground and Get Books!
+            {title}
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>

@@ -18,7 +18,7 @@ import { isNumeric, getQueryParams } from "../../utils/string";
 import { searchItems } from "../../utils/constants";
 
 import CardsList from "../../components/CardsList";
-import NavBar from "../../components/NavBar";
+import NavBar from "../../components/NavBar/NavBar";
 
 const styles = () => ({
   error: {
@@ -142,7 +142,7 @@ class ListBooks extends Component<ListBooksProps> {
 
     return (
       <div className="ListBooks">
-        <NavBar />
+        <NavBar title="Get Ground and Get Books!" />
         <Container>
           <Grid
             container
