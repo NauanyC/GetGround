@@ -25,7 +25,8 @@ const styles = () => ({
     color: "#c41d47",
   },
   searchButton: {
-    width: "120px",
+    width: "100%",
+    maxWidth: "180px",
     height: "53px",
   },
   icon: {
@@ -33,6 +34,9 @@ const styles = () => ({
   },
   searchFieldsContainer: {
     margin: "50px 0 20px",
+  },
+  inputField: {
+    width: "100%",
   },
 });
 
@@ -104,16 +108,23 @@ class ListBooks extends Component<ListBooksProps> {
               >
                 {searchItems.map((item) => {
                   return (
-                    <Grid item lg={item.size}>
+                    <Grid
+                      item
+                      md={item.size.md}
+                      xs={item.size.xs}
+                      sm={item.size.sm}
+                      key={item.value}
+                    >
                       <TextField
-                        id={item.value}
+                        id={item.name}
                         label={item.name}
                         variant="outlined"
+                        className={classes.inputField}
                       />
                     </Grid>
                   );
                 })}
-                <Grid item lg={4}>
+                <Grid item sm={3} xs={6}>
                   <Button
                     variant="contained"
                     color="primary"
@@ -135,7 +146,7 @@ class ListBooks extends Component<ListBooksProps> {
     return (
       <div className="ListBooks">
         <NavBar />
-        <Container maxWidth="lg">{renderBooks()}</Container>
+        <Container>{renderBooks()}</Container>
       </div>
     );
   }

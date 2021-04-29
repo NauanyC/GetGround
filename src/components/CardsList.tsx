@@ -41,6 +41,14 @@ const CardsList: React.SFC<CardsListProps> = ({
 }: CardsListProps) => {
   const classes = useStyles();
 
+  const parseAuthorNames = (authors: string[]): string => {
+    const parsedAuthors =
+      authors && Array.isArray(authors) && authors.length > 0
+        ? authors.toString().substring(0, 23)
+        : "Unknown author...";
+    return `${parsedAuthors}...`;
+  };
+
   return (
     <>
       {list.map((book) => (
@@ -52,7 +60,7 @@ const CardsList: React.SFC<CardsListProps> = ({
                 gutterBottom
                 className={classes.flexTypography}
               >
-                {book.book_author}
+                {parseAuthorNames(book.book_author)}
                 <IconButton aria-label="love reaction">
                   <FavoriteIcon />
                 </IconButton>
