@@ -75,7 +75,7 @@ const CardsList: React.SFC<CardsListProps> = ({
                   component="h2"
                   className={classes.title}
                 >
-                  {book.book_title}
+                  {`${book.book_title.substring(0, 35)}...`}
                 </Typography>
                 <Typography className={classes.bookOriginAddress}>
                   {book.book_publication_country}, {book.book_publication_city}
