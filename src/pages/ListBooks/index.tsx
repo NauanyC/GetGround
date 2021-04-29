@@ -78,25 +78,22 @@ class ListBooks extends Component<ListBooksProps> {
 
       if (error) {
         return (
-          <Typography className={classes.error}>
+          <Typography className={classes.error} variant="h4" component="h2">
             Sorry, something went wrong!
           </Typography>
         );
       }
 
       if (Array.isArray(books) && books.length < 1 && booksCount) {
-        return <Typography>Sorry, we couldn't find any book...</Typography>;
+        return (
+          <Typography variant="h4" component="h2">
+            Sorry, we couldn't find any book...
+          </Typography>
+        );
       }
 
       return (
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          alignItems="center"
-          justify="center"
-          style={{ minHeight: "100vh" }}
-        >
+        <>
           <Grid item xs={12} className={classes.searchFieldsContainer}>
             <form noValidate autoComplete="off">
               <Grid
@@ -139,14 +136,25 @@ class ListBooks extends Component<ListBooksProps> {
           </Grid>
 
           <CardsList list={books} count={booksCount} />
-        </Grid>
+        </>
       );
     };
 
     return (
       <div className="ListBooks">
         <NavBar />
-        <Container>{renderBooks()}</Container>
+        <Container>
+          <Grid
+            container
+            spacing={2}
+            direction="row"
+            alignItems="center"
+            justify="center"
+            style={{ minHeight: "100vh" }}
+          >
+            {renderBooks()}
+          </Grid>
+        </Container>
       </div>
     );
   }
