@@ -51,15 +51,20 @@ interface ListBooksProps extends WithStyles<typeof styles> {
 class ListBooks extends Component<ListBooksProps> {
   componentDidMount() {
     const urlQuery = this.props.location.search.substring(1);
+    const queryParams =
+      urlQuery && urlQuery.length > 0 ? getQueryParams(urlQuery) : null;
 
-    const queryParams = getQueryParams(urlQuery);
+    const page =
+      queryParams && queryParams.page && isNumeric(queryParams.page)
+        ? parseInt(queryParams.page, 10)
+        : 1;
 
-    const page = isNumeric(queryParams.page)
-      ? parseInt(queryParams.page, 10)
-      : 1;
-    const itemsPerPage = isNumeric(queryParams.itemsPerPage)
-      ? parseInt(queryParams.itemsPerPage, 10)
-      : 20;
+    const itemsPerPage =
+      queryParams &&
+      queryParams.itemsPerPage &&
+      isNumeric(queryParams.itemsPerPage)
+        ? parseInt(queryParams.itemsPerPage, 10)
+        : 20;
 
     this.props.getBooks({
       page,
