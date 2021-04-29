@@ -37,7 +37,7 @@ const NavBar: React.FC = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Your books!
+            Get Ground and Get Books!
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
