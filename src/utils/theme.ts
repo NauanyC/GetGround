@@ -6,10 +6,10 @@ export const themeLight = createMuiTheme({
       default: "#fff",
     },
     primary: {
-      main: "#4d3b15",
+      main: "#393a3b",
     },
     secondary: {
-      main: "#5f7778",
+      main: "#d7dbd9",
     },
   },
 });

@@ -18,6 +18,7 @@ import { isNumeric, getQueryParams } from "../../utils/string";
 import { searchItems } from "../../utils/constants";
 
 import CardsList from "../../components/CardsList";
+import NavBar from "../../components/NavBar";
 
 const styles = () => ({
   error: {
@@ -133,6 +134,7 @@ class ListBooks extends Component<ListBooksProps> {
 
     return (
       <div className="ListBooks">
+        <NavBar />
         <Container maxWidth="lg">{renderBooks()}</Container>
       </div>
     );
