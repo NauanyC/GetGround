@@ -20,3 +20,9 @@ export interface StateProps {
   error: string;
   loading: boolean;
 }
+
+export interface getBooksBodyProps {
+  page?: number;
+  itemsPerPage?: number;
+  filters?: any[];
+}

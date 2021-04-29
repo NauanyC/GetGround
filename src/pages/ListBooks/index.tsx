@@ -6,6 +6,7 @@ import { CircularProgress, Container, Typography } from "@material-ui/core";
 import { withStyles, WithStyles } from "@material-ui/core/styles";
 import { StateProps } from "../../interfaces/Book";
 import { getBooks } from "../../store/actions/booksActions";
+import { isNumeric, getQueryParams } from "../../utils/string";
 
 import CardsList from "../../components/CardsList";
 
@@ -16,13 +17,30 @@ const styles = () => ({
 });
 
 interface ListBooksProps extends WithStyles<typeof styles> {
-  getBooks: () => any;
+  getBooks: (body: any) => any;
   books: StateProps;
+  location: {
+    search: string;
+  };
 }
 
 class ListBooks extends Component<ListBooksProps> {
   componentDidMount() {
-    this.props.getBooks();
+    const urlQuery = this.props.location.search.substring(1);
+
+    const queryParams = getQueryParams(urlQuery);
+
+    const page = isNumeric(queryParams.page)
+      ? parseInt(queryParams.page, 10)
+      : 1;
+    const itemsPerPage = isNumeric(queryParams.itemsPerPage)
+      ? parseInt(queryParams.itemsPerPage, 10)
+      : 20;
+
+    this.props.getBooks({
+      page,
+      itemsPerPage,
+    });
   }
 
   render(): JSX.Element {

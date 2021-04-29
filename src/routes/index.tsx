@@ -6,7 +6,7 @@ import ListBooks from "../pages/ListBooks";
 const Routes: React.FC = () => {
   return (
     <Switch>
-      <Route path="/" exact component={ListBooks} />
+      <Route path="/" component={ListBooks} />
     </Switch>
   );
 };
