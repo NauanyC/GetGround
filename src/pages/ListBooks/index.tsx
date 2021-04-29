@@ -150,7 +150,6 @@ class ListBooks extends Component<ListBooksProps> {
             direction="row"
             alignItems="center"
             justify="center"
-            style={{ minHeight: "100vh" }}
           >
             {renderBooks()}
           </Grid>
